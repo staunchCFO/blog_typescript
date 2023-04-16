@@ -45,7 +45,7 @@ class App {
         const { MONGO_PATH, MONGO_USER, MONGO_PASSWORD } = process.env;
 
         mongoose.connect(
-            `mongoose+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_PATH}`
+            `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`
         );
     }
 

@@ -18,7 +18,6 @@ function validattionMiddleware(schema: Joi.Schema): RequestHandler {
                 req.body,
                 validationOptions
             );
-
             req.body = value;
             next()
         } catch (e: any) {
