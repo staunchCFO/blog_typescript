@@ -7,7 +7,7 @@ module.exports = {
     ],
     parseOptions: {
         ecmaVersion: 2018,
-        sourceType: 'module'
+        sourceType: "module"
     },
     rules: {}
 }

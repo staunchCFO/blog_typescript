@@ -9,6 +9,8 @@
     "build": "tsc",
     "postinstall": "npm run build"
   },
+  "keywords": [],
+  "author": "",
   "license": "MIT",
   "devDependencies": {
     "@types/compression": "^1.7.2",
