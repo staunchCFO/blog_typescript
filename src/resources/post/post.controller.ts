@@ -20,6 +20,10 @@ class PostController implements Controller {
             validationMiddleware(validate.create),
             this.create
         )
+        this.router.get(
+            `${this.path}`,
+            this.get
+        )
     }
 
     private create = async (
@@ -37,6 +41,22 @@ class PostController implements Controller {
             });
         } catch (error) {
             next(new HttpException(400, 'Cannot create post'));
+        }
+    }
+
+    private get = async (
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ) : Promise<Response | void> => {
+        try {
+            const posts = await this.PostService.find();
+
+            res.status(201).json({
+                posts
+            });
+        } catch (error) {
+            next(new HttpException(400, 'Cannot find any post'));
         }
     }
 }
